@@ -77,7 +77,7 @@ The only way I figured out is to (repeatedly) click on the (one) button/indicato
 It is currently somewhat lame, but here is how it works:
 
 state     | button color | button click causes     | map click causes  | activity
------     | -----        | -----                   | -----             |
+-----     | -----        | -----                   | -----             | ----
 armed     | yellow       | search for gps position | query for POI<br/>at this location |
 idle      | orange-ish   | nothing                 | ???              | query to backend outstanding
 searching | green-ish    | acquiring gps position  | ???              |
