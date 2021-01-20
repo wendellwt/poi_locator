@@ -17,10 +17,12 @@ Intersting POIs include:
 
 Software modules used:
 
-* vuejs
-* vuelayers (of course!)
-* vuetify (as an attempt to make mobile-phone full-screen)
-* axios (for url retrieval)
+* [vuejs](https://vuejs.org/)
+* [vuelayers](https://vuelayers.github.io/#/) (of course!)
+* [vuetify](https://vuetifyjs.com/en/) (as an attempt to make mobile-phone full-screen)
+* axios (for url retrieval, not sure if it is needed; maybe fetch would have worked as well)
+* [BellTopo Sans](https://www.sarahbellmaps.com/typography-for-topography-belltopo-sans-free-font/)
+Sarah Bell deveoped a font that seemed nifty and I thought I would try to use it just for fun.
 
 Note: this app uses `vuetify`, later projects used `buefy`,
 but I'm not sure why I chose either.
