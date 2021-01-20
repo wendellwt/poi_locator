@@ -115,6 +115,7 @@ https://go.ilikecarrots.com/get_yp_bb?topic=yp&bbox=-77.07531639715556,38.984579
 
 ## TODO
 
+Things to improve upon include:
 * have VueDC fix everything(!)
 * make button / state machine better (or at least more intuitive)
 * select back-end lookup sources:
