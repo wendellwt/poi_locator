@@ -61,9 +61,7 @@ near the GPS position every 4 minutes.
 
 ## messages
 
-A lot of messages are sent around using
-`this.$root.$emit` to send
-`this.$root.$on` to receive.
+Here are the messages sent between components:
 
 message      | sender<br/>`this.$root.$emit` | receiver<br/>`this.$root.$on` | purpose
 ------       | ------         | -------  | -------
@@ -74,7 +72,6 @@ closeMe3     | AppCard        | AppOL    | 'close' on Card popup clicked on
 map_click    | AppOL          | AppGps   | someowhere on map clicked; retrieve POIs at this location
 position_gps | AppGps         | AppBbq   | fetch POI data around this position
 position_map | AppGps         | AppBbq   | fetch POI data in displayed bounding box
-
 
 ## state
 
@@ -94,10 +91,12 @@ tracking  | green-ish    | stop tracking           | ???              | tracking
 
 Sample backend queries are:
 
-Query OSM for selected POIs:
+Query OSM for selected POIs `/get_osm_bb?bbox=...`:
+<br/>
 https://go.ilikecarrots.com/get_osm_bb?bbox=-77.07531639715556,38.98457999774084,-76.97566696783429,39.00772718720543
 
 Find zip code of location, lookup in YellowPages.com for selected items,
-attempt to filer for 'good' ones, and format as appropriate:
+attempt to filer for 'good' ones, and format as appropriate `/get_yp_bb?topic=yp&bbox=...`:
+<br/>
 https://go.ilikecarrots.com/get_yp_bb?topic=yp&bbox=-77.07531639715556,38.98457999774084,-76.97566696783429,39.00772718720543
 
