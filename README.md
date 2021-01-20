@@ -9,7 +9,7 @@ as you drive along the road.
 Site: https://go.ilikecarrots.com/
 
 Intersting Points Of Interest include:
-* cheese shops ![cheese image](https://go.ilikecarrots.com/images/cheese.png)
+* cheese shops
 * icecream shops
 * barbecue restaurants
 * pho restaurants
@@ -28,9 +28,9 @@ Software modules used:
 make mobile-phone full-screen)
 * axios (for url retrieval, not sure if it is needed;
 maybe fetch would have worked as well)
-* [BellTopo Sans](https://www.sarahbellmaps.com/typography-for-topography-belltopo-sans-free-font/)
+* [BellTopo Sans font](https://www.sarahbellmaps.com/typography-for-topography-belltopo-sans-free-font/)
 Sarah Bell deveoped a font that seemed nifty and
-I thought I would try to use it just for fun.
+I thought I would use it just for fun.
 
 Note: this app uses `vuetify`, later projects used `buefy/bulma`,
 but I'm not sure why I chose either.
@@ -46,7 +46,8 @@ to make a (much) smaller app.js (i.e., production):
 ````
     make prod
 ````
-Note: it installs to my CherryPy server directory on ilikecarrots.com.
+Note: `make` (which runs `npm run build`)  installs directly to the
+CherryPy server directory on `ilikecarrots.com`.
 
 ## operation
 
@@ -86,16 +87,18 @@ position_map | AppGps         | AppBbq   | fetch POI data in displayed bounding 
 ## state
 
 The main operation is a state machine.
-The only way I figured out is to (repeatedly) click on the (one) button/indicator.
+The only way I figured out to have the 'state machine' step
+through the states is to (repeatedly) click on the (one) button/indicator.
+This could be better.
 
 It is currently somewhat lame, but here is how it works:
 
 state     | button color | button click causes     | map click causes  | activity
 -----     | -----        | -----                   | -----             | ----
 armed     | yellow       | search for gps position | query for POI<br/>at this location |
-idle      | orange-ish   | nothing                 | ???              | query to backend outstanding
-searching | green-ish    | acquiring gps position  | ???              |
-tracking  | green-ish    | stop tracking           | ???              | tracking gps position,<br/>map icons update automatically
+idle      | orange-ish   | nothing                 | ?              | query to backend outstanding
+searching | green-ish    | acquiring gps position  | ?              |
+tracking  | green-ish    | stop tracking           | ?              | tracking gps position,<br/>map icons update automatically
 
 ## backend
 
@@ -109,4 +112,19 @@ Find zip code of location, lookup in YellowPages.com for selected items,
 attempt to filer for 'good' ones, and format as appropriate `/get_yp_bb?topic=yp&bbox=...`:
 <br/>
 https://go.ilikecarrots.com/get_yp_bb?topic=yp&bbox=-77.07531639715556,38.98457999774084,-76.97566696783429,39.00772718720543
+
+## TODO
+
+* have VueDC fix everything(!)
+* make button / state machine better (or at least more intuitive)
+* select back-end lookup sources:
+
+    * osm (done)
+    * yellow-pages (done)
+    * farmers markets (from US D of A)
+    * roadside attracions (from wikipedia)
+    * dishing out NJ
+    * here.com
+    * my own PostGIS locations tables
+
 
