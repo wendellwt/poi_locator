@@ -3,13 +3,13 @@
 
 Initial concept: make a full-screen mobile app that would continuously
 receive GPS position and query either OSM or 'local' yellow pages
-and display nearby 'interesting' *P*oints *O*f *I*nterest
+and display nearby 'interesting' **P**oints **O**f **I**nterest
 as you drive along the road.
 
 Site: https://go.ilikecarrots.com/
 
 Intersting Points Of Interest include:
-* cheese shops
+* cheese shops ![cheese image](https://go.ilikecarrots.com/images/cheese.png)
 * icecream shops
 * barbecue restaurants
 * pho restaurants
