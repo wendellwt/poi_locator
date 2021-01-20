@@ -5,22 +5,24 @@ Initial concept: make a full-screen mobile app that would continuously
 receive GPS position and query either OSM or 'local' yellow pages
 and display nearby 'interesting' points as you drive along the road.
 
+Site: https://go.ilikecarrots.com/
+
 Intersting POIs include:
 * cheese shops
 * icecream shops
 * barbecue restaurants
-* Pho restaurants
+* pho restaurants
 * roadside attractions
 * miniature libraries (public bookcase)
 
-This experimental application uses:
+Software modules used:
 
 * vuejs
 * vuelayers (of course!)
 * vuetify (as an attempt to make mobile-phone full-screen)
 * axios (for url retrieval)
 
-Note: this app uses vuetify, later projects used buefy,
+Note: this app uses `vuetify`, later projects used `buefy`,
 but I'm not sure why I chose either.
 
 ### compilation:
@@ -40,10 +42,9 @@ Note: it installs to my CherryPy server directory on ilikecarrots.com.
 
 When app starts up:
 
-* selector shows 'click to query viewport'
+State selector shows 'click to query viewport'.
 
-Click anywhere on the map and it will send a query to the source host.
-(FIXME: make this **always** use https://go.ilc.com!!!)
+* Click anywhere on the map and it will send a query to the source host.
 
 This sends a query to ilikecarrots.com for either
 an OSM or YellowPages query.
@@ -51,16 +52,22 @@ It returns geojson with properties.
 
 If the symbol is clicked on, information is displayed in a Card.
 
+* Click on the State selector button to start gps acquisiton.
+
+Once position is acquired it will repeatedly query for POIs
+near the GPS position every 4 minutes.
+
+* Click on the State selector again to go back to idle state.
+
 ## messages
 
 A lot of messages are sent around using
 `this.$root.$emit` to send
 `this.$root.$on` to receive.
 
-message      | sender         | receiver | purpose
+message      | sender<br/>`this.$root.$emit` | receiver<br/>`this.$root.$on` | purpose
 ------       | ------         | -------  | -------
 position     | AppGps         | AppOL    | gps position received/updated; position map
-features_ice | Features class | AppOL    | geojson features received; display icons
 features_bbq | Features class | AppOL    | geojson features received; display icons
 features_osm | Features class | AppOL    | geojson features received; display icons
 closeMe3     | AppCard        | AppOL    | 'close' on Card popup clicked on
