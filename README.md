@@ -3,28 +3,36 @@
 
 Initial concept: make a full-screen mobile app that would continuously
 receive GPS position and query either OSM or 'local' yellow pages
-and display nearby 'interesting' points as you drive along the road.
+and display nearby 'interesting' *P*oints *O*f *I*nterest
+as you drive along the road.
 
 Site: https://go.ilikecarrots.com/
 
-Intersting POIs include:
+Intersting Points Of Interest include:
 * cheese shops
 * icecream shops
 * barbecue restaurants
 * pho restaurants
+* fountains
+* gardens
+* lesisure/theme-park trains
 * roadside attractions
+* sheep farms
 * miniature libraries (public bookcase)
 
 Software modules used:
 
 * [vuejs](https://vuejs.org/)
 * [vuelayers](https://vuelayers.github.io/#/) (of course!)
-* [vuetify](https://vuetifyjs.com/en/) (as an attempt to make mobile-phone full-screen)
-* axios (for url retrieval, not sure if it is needed; maybe fetch would have worked as well)
+* [vuetify](https://vuetifyjs.com/en/) (as an attempt to
+make mobile-phone full-screen)
+* axios (for url retrieval, not sure if it is needed;
+maybe fetch would have worked as well)
 * [BellTopo Sans](https://www.sarahbellmaps.com/typography-for-topography-belltopo-sans-free-font/)
-Sarah Bell deveoped a font that seemed nifty and I thought I would try to use it just for fun.
+Sarah Bell deveoped a font that seemed nifty and
+I thought I would try to use it just for fun.
 
-Note: this app uses `vuetify`, later projects used `buefy`,
+Note: this app uses `vuetify`, later projects used `buefy/bulma`,
 but I'm not sure why I chose either.
 
 ### compilation:
