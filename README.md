@@ -70,21 +70,7 @@ near the GPS position every 4 minutes.
 
 * Click on the State selector again to go back to idle state.
 
-## messages
-
-Here are the messages sent between components:
-
-message      | sender<br/>`this.$root.$emit` | receiver<br/>`this.$root.$on` | purpose
-------       | ------         | -------  | -------
-position     | AppGps         | AppOL    | gps position received/updated; position map
-features_bbq | Features class | AppOL    | geojson features received; display icons
-features_osm | Features class | AppOL    | geojson features received; display icons
-closeMe3     | AppCard        | AppOL    | 'close' on Card popup clicked on
-map_click    | AppOL          | AppGps   | someowhere on map clicked; retrieve POIs at this location
-position_gps | AppGps         | AppBbq   | fetch POI data around this position
-position_map | AppGps         | AppBbq   | fetch POI data in displayed bounding box
-
-## state
+### state
 
 The main operation is a state machine.
 The only way I figured out to have the 'state machine' step
@@ -99,6 +85,20 @@ armed     | yellow       | search for gps position | query for POI<br/>at this l
 idle      | orange-ish   | nothing                 | ?              | query to backend outstanding
 searching | green-ish    | acquiring gps position  | ?              |
 tracking  | green-ish    | stop tracking           | ?              | tracking gps position,<br/>map icons update automatically
+
+### messages
+
+Here are the messages sent between components:
+
+message      | sender<br/>`this.$root.$emit` | receiver<br/>`this.$root.$on` | purpose
+------       | ------         | -------  | -------
+position     | AppGps         | AppOL    | gps position received/updated; position map
+features_bbq | Features class | AppOL    | geojson features received; display icons
+features_osm | Features class | AppOL    | geojson features received; display icons
+closeMe3     | AppCard        | AppOL    | 'close' on Card popup clicked on
+map_click    | AppOL          | AppGps   | someowhere on map clicked; retrieve POIs at this location
+position_gps | AppGps         | AppBbq   | fetch POI data around this position
+position_map | AppGps         | AppBbq   | fetch POI data in displayed bounding box
 
 ## backend
 
@@ -126,5 +126,4 @@ https://go.ilikecarrots.com/get_yp_bb?topic=yp&bbox=-77.07531639715556,38.984579
     * dishing out NJ
     * here.com
     * my own PostGIS locations tables
-
 
