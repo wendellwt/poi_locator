@@ -1,0 +1,7 @@
+
+# ignore the node_modules directory
+node_modules/
+
+# not sure why this is here or why it should be ignored:
+.env
+
